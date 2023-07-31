@@ -1,0 +1,68 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "style": "plain",
+          "foreground": "#ddffbb",
+          "template": "({{ .Venv }}) ",
+          "type": "python"
+        },
+        {
+          "foreground": "#D75F00",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#FFFFFF{{ end }}"
+          ],
+          "style": "plain",
+          "template": "<b>\u25cf</b> ",
+          "properties": {
+            "always_enabled": true
+          },
+          "type": "exit"
+        },
+        {
+          "foreground": "#ddffbb",
+          "style": "plain",
+          "template": "<b>{{ .UserName }}</b> ",
+          "type": "session"
+        },
+        {
+          "foreground": "#aaff55",
+          "style": "plain",
+          "template": "in ",
+          "type": "text"
+        },
+        {
+          "foreground": "#88FF00",
+          "properties": {
+            "folder_icon": "...",
+            "max_depth": 2,
+            "style": "agnoster_short"
+          },
+          "style": "plain",
+          "template": "<b>{{ .Path }}</b> ",
+          "type": "path"
+        },
+        {
+          "foreground": "#ddffbb",
+          "properties": {
+            "branch_icon": ""
+          },
+          "style": "plain",
+          "template": "<#aaff55>git:(</><b>{{ .HEAD }}</b><#aaff55>)</> ",
+          "type": "git"
+        },
+        {
+          "foreground": "#D75F00",
+          "style": "plain",
+          "template": "<b>λ</b> ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}

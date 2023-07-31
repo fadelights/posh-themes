@@ -1,0 +1,136 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#F28FAD",
+          "leading_diamond": "<#ff70a6> \ue200 </>",
+          "properties": {
+            "display_host": true
+          },
+          "style": "diamond",
+          "template": "<b>{{ .UserName }}</b> <#ffffff>@</>",
+          "type": "session"
+        },
+        {
+          "foreground": "#DDB6F2",
+          "properties": {
+            "display_host": true
+          },
+          "style": "diamond",
+          "template": " <b>{{ .HostName }}</b> ",
+          "type": "session"
+        },
+        {
+          "foreground": "#F5C2E7",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
+          },
+          "style": "diamond",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#81ff91",
+          "style": "plain",
+          "type": "text"
+        },
+        {
+          "foreground": "#81ff91",
+          "style": "plain",
+          "template": " \uE235 {{ .Venv }} <#ffffff>\uf6dc</>",
+          "type": "python"
+        },
+        {
+          "foreground": "#81ff91",
+          "properties": {
+            "style": "round",
+            "threshold": 100
+          },
+          "style": "diamond",
+          "template": " {{ .FormattedMs }} <#ffffff>\uf6dc</>",
+          "type": "executiontime"
+        },
+        {
+          "properties": {
+            "root_icon": "\uf292 "
+          },
+          "style": "diamond",
+          "template": " \uf0e7 ",
+          "type": "root"
+        },
+        {
+          "foreground": "#81ff91",
+          "style": "diamond",
+          "template": " <#ffffff>CPU:</> {{ round .PhysicalPercentUsed .Precision }}\uff05",
+          "type": "sysinfo"
+        },
+        {
+          "foreground": "#81ff91",
+          "style": "diamond",
+          "template": " <#ffffff>\uf6dc</> <#ffffff>RAM:</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
+          "type": "sysinfo"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#96CDFB",
+          "leading_diamond": "<#00c7fc> \ue285 </><#ffafd2></>",
+          "properties": {
+            "folder_icon": "..",
+            "folder_separator_icon": " \uf9e0",
+            "home_icon": "home",
+            "max_depth": 2,
+            "style": "folder"
+          },
+          "style": "diamond",
+          "template": "<r>{{ .Path }}</r>",
+          "trailing_diamond": "<#ffafd2></>",
+          "type": "path"
+        },
+        {
+          "foreground": "#A9FFB4",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": " \u25cf ",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "\u2660",
+  "osc99": false,
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#FEF5ED",
+    "template": "\ue285 "
+  },
+  "secondary_prompt": {
+    "template": "\ue285\ue285 "
+  },
+  "version": 2
+}
