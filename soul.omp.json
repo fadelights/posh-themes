@@ -61,7 +61,7 @@
             "threshold": 100
           },
           "style": "diamond",
-          "template": " {{ .FormattedMs }} <#ffffff>\uf6dc</>",
+          "template": " {{ .FormattedMs }} <#ffffff>\ueb10</>",
           "type": "executiontime"
         },
         {
@@ -69,19 +69,19 @@
             "root_icon": "\uf292 "
           },
           "style": "diamond",
-          "template": " \uf0e7 ",
+          "template": " <#e0b53f>\udb85\udcc7</> ",
           "type": "root"
         },
         {
           "foreground": "#81ff91",
           "style": "diamond",
-          "template": " <#ffffff>CPU:</> {{ round .PhysicalPercentUsed .Precision }}\uff05",
+          "template": " \uf4bc {{ round .PhysicalPercentUsed .Precision }}%",
           "type": "sysinfo"
         },
         {
           "foreground": "#81ff91",
           "style": "diamond",
-          "template": " <#ffffff>\uf6dc</> <#ffffff>RAM:</> {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
+          "template": " \ue266 {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
           "type": "sysinfo"
         }
       ],
