@@ -2,67 +2,82 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "style": "plain",
-          "foreground": "#ddffbb",
+          "properties": {
+            "cache_duration": "none"
+          },
           "template": "({{ .Venv }}) ",
-          "type": "python"
+          "foreground": "#ddffbb",
+          "type": "python",
+          "style": "plain"
         },
         {
+          "properties": {
+            "always_enabled": true,
+            "cache_duration": "none"
+          },
+          "template": "<b>\uea71</b> ",
           "foreground": "#D75F00",
+          "type": "exit",
+          "style": "plain",
           "foreground_templates": [
             "{{ if gt .Code 0 }}#FFFFFF{{ end }}"
-          ],
-          "style": "plain",
-          "template": "<b>\u25cf</b> ",
+          ]
+        },
+        {
           "properties": {
-            "always_enabled": true
+            "cache_duration": "none"
           },
-          "type": "exit"
-        },
-        {
-          "foreground": "#ddffbb",
-          "style": "plain",
           "template": "<b>{{ .UserName }}</b> ",
-          "type": "session"
+          "foreground": "#ddffbb",
+          "type": "session",
+          "style": "plain"
         },
         {
-          "foreground": "#aaff55",
-          "style": "plain",
-          "template": "in ",
-          "type": "text"
-        },
-        {
-          "foreground": "#88FF00",
           "properties": {
+            "cache_duration": "none"
+          },
+          "template": "in ",
+          "foreground": "#aaff55",
+          "type": "text",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
             "folder_icon": "...",
             "max_depth": 2,
             "style": "agnoster_short"
           },
-          "style": "plain",
           "template": "<b>{{ .Path }}</b> ",
-          "type": "path"
+          "foreground": "#88FF00",
+          "type": "path",
+          "style": "plain"
         },
         {
-          "foreground": "#ddffbb",
           "properties": {
-            "branch_icon": ""
+            "branch_icon": "",
+            "cache_duration": "none"
           },
-          "style": "plain",
           "template": "<#aaff55>git:(</><b>{{ .HEAD }}</b><#aaff55>)</> ",
-          "type": "git"
+          "foreground": "#ddffbb",
+          "type": "git",
+          "style": "plain"
         },
         {
-          "foreground": "#D75F00",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
           "template": "<b>λ</b> ",
-          "type": "text"
+          "foreground": "#D75F00",
+          "type": "text",
+          "style": "plain"
         }
-      ],
-      "type": "prompt"
+      ]
     }
   ],
-  "version": 2
+  "version": 3
 }
