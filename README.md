@@ -8,12 +8,12 @@ and tuned to suit my needs.
 ## Usage
 After adding the following lines to your (my?) shell `.rc` file;
 e.g. `.zshrc`
-```
+```bash
 export POSH_THEMES="$HOME/.cache/oh-my-posh/themes"
 export POSH_CUSTOM_THEMES="$HOME/.cache/oh-my-posh/custom-themes"
 eval "$(oh-my-posh init zsh --config $POSH_CUSTOM_THEMES/lambda.omp.json)"
 ```
 and restarting the shell session, clone this repo inside it.
-```
+```bash
 git clone https://github.com/fadelights/posh-themes.git $POSH_CUSTOM_THEMES
 ```
